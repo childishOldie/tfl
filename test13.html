@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>客户端的IP地址:
+  <%
+  String currUrl= request.getRemoteAddr();
+  out.print(currUrl);
+  %>
+<p>客户机名称：<%=request.getRemoteAddr() %>
+<p>客户机名称：<%=request.getRemoteHost() %>
+<p>客户机名称：<%=request.getServerName() %>
+<p>客户机名称：<%=request.getServerPort() %>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+function pd(){
+    var a=document.biao.zh.value.length;
+    var b=document.biao.mm.value.length;
+    if(a==0){
+        window.alert("账号不能为空")
+    }
+    if(b==0){
+        window.alert("密码不能为空")
+    }
+
+}
+
+  </script>
+</head>
+<body>
+<p>欢迎您登陆：</p>
+<form name="biao">
+
+    账号：<input name="zh" type="text"><br/>
+    密码：<input name="mm" type="password"><br/>
+    <input onclick="pd()" type="button" value="登陆">
+
+</form>
+
+
+
+</body>
+</html>

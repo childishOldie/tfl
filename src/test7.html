@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+      <title>问候语</title>
+</head>
+<body>
+<div id="greeting"></div>
+
+<script>
+  function setGreeting() {
+    const now = new Date();
+    const hour = now.getHours();
+    const greetingElement = document.getElementById('greeting');
+
+    if (hour < 12) {
+      greetingElement.textContent = '早上好！';
+      greetingElement.style.color = 'blue';
+    } else if (hour >= 12 && hour < 18) {
+      greetingElement.textContent = '下午好！';
+      greetingElement.style.color = 'red';
+    } else {
+      greetingElement.textContent = '晚上好！';
+      greetingElement.style.color = 'black';
+    }
+  }
+
+  // 调用函数以设置问候语
+  setGreeting();
+</script>
+
+</body>
+</html>

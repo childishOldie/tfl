@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+  function ff(){
+    if(document.loginForm.zh.value==""){
+      window.alert("账号不能为空");
+
+    }
+    if(document.loginForm.mm.value==""){
+      window.alert("账号不能为空");
+
+    }
+    loginForm.submit();
+  }
+
+
+</script>
+<body>
+<form name="loginForm" action="test5.html" method="post">
+  请输入你的账号：<input name="zh" type="text"><br/>
+  请输入你的密码：<input name="mm" type="password"><br/>
+  <input type="button" value="登陆" onclick="ff()">
+</form>
+</body>
+</html>

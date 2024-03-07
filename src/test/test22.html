@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script type="text/javascript">
+    var data=new Date();
+    var hour=data.getHours();
+    if(hour<12){
+        var st1="早上好！"
+        st1=st1.fontcolor("blue");
+        document.write(st1);
+    }else if(hour<18){
+        var st2="下午好";
+        st2=st2.fontcolor("red");
+        document.write(st2);
+
+    }else{
+        var st3="晚上好";
+        st3=st3.fontcolor("black");
+        document.write(st3);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    for(var i=100;1<=500;i++){
+        var h,t,a;
+        h=parseInt(i/100,10);
+        t=parseInt((i-h*100)/10,10);
+        a=i-(h*100+t*10);
+        if(h*h*h+t*t*t+a*a*a==i){
+            document.writeln(i);
+            document.writeln("<br/>")
+        }
+
+    }
+</script>
+</body>
+</html>

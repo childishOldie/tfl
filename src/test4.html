@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<%
+Class.forName("com.mysql.jdbc.Driver");
+String url = "jdbc:mysql://LAPTOP-MBO4R3BM:3306/student";
+String username = "root";
+String password = "123456";
+String getpId = request.getParameter("pIdnum");
+Connection connection = DriverManager.getConnection(url,username,password);
+Statement statement = connection.createStatement();
+String sql = "select * from student where pId='"+getpId+"'";
+ResultSet resultSet = statement.executeQuery(sql);
+int id = 0;
+String pId = null;
+String no = null;
+String name = null;
+String sex = null;
+String birthday = null;
+%>
+<table border="1">
+    <tr>
+        <td>记录id</td><td>身份证号</td><td>学号</td><td>姓名</td><td>性别</td><td>出生日期</td>
+    </tr>
+    <%
+    while (resultSet.next()){
+    id = resultSet.getInt("id");
+    pId = resultSet.getString("pId");
+    no = resultSet.getString("no");
+    name = resultSet.getString("name");
+    sex = resultSet.getString("sex");
+    birthday = resultSet.getString("birthday");
+    %>
+    <tr>
+        <td><%=id%></td><td><%=pId%></td><td><%=no%></td><td><%=name%></td><td><%=sex%></td><td><%=birthday%></td>
+    </tr>
+    <%
+    }
+    resultSet.close();
+    statement.close();
+    connection.close();
+    %>
+</table>
+<a href="selectDemo.jsp">返回</a>
+</body>
+</html>

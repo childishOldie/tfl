@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+      <title>水仙花数</title>
+</head>
+<body>
+<h1>100到500之间的水仙花数：</h1>
+<ul id="result"></ul>
+
+<script>
+  function isNarcissisticNumber(number) {
+    let sum = 0;
+    let temp = number;
+    const numberOfDigits = String(number).length;
+
+    while (temp > 0) {
+      const digit = temp % 10;
+      sum += Math.pow(digit, numberOfDigits);
+      temp = Math.floor(temp / 10);
+    }
+
+    return sum === number;
+  }
+
+  function findNarcissisticNumbers(start, end) {
+    const narcissisticNumbers = [];
+
+    for (let i = start; i <= end; i++) {
+      if (isNarcissisticNumber(i)) {
+        narcissisticNumbers.push(i);
+      }
+    }
+
+    return narcissisticNumbers;
+  }
+
+  const resultElement = document.getElementById('result');
+  const narcissisticNumbers = findNarcissisticNumbers(100, 500);
+
+  for (const number of narcissisticNumbers) {
+    const listItem = document.createElement('li');
+    listItem.textContent = number;
+    resultElement.appendChild(listItem);
+  }
+</script>
+</body>
+</html>

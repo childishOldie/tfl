@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<%
+Class.forName("com.mysql.jdbc.Driver");
+String url = "jdbc:mysql://LAPTOP-MBO4R3BM:3306/student
+String username = "root";
+String password = "123456";
+Connection connection = DriverManager.getConnection(url,username,password);
+Statement statement = connection.createStatement();
+String sql = "select * from student";
+ResultSet resultSet = statement.executeQuery(sql);
+String pId = null;
+String no = null;
+String name = null;
+%>
+<table border="1">
+    <tr>
+        <td>身份证号</td><td>学号</td><td>姓名</td><td>点击查看更多</td><td>操作</td>
+    </tr>
+
+    <%
+    while (resultSet.next()){
+    pId = resultSet.getString("pId");
+    no = resultSet.getString("no");
+    name = resultSet.getString("name");
+
+
+    %>
+    <tr>
+        <td><%=pId%></td><td><%=no%></td><td><%=name%></td><td><a href="selectDetailDemo.jsp?pIdnum=<%=pId%>">详情</a></td>
+        <td><a href="updateDetailDemo.jsp?pIdnum=<%=pId%>">更新或删除</a></td>
+    </tr>
+    <%
+    }
+    resultSet.close();
+    statement.close();
+    connection.close();
+    %>
+</table>
+</body>
+</html>
